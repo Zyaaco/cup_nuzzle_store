@@ -1,0 +1,4 @@
+background: #1b2430
+primray: #DFF6FF
+secondary: #47B5FF
+thirdary: #256D85
