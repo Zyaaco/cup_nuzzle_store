@@ -1,7 +1,7 @@
 import React from "react";
 import Head from "next/head";
 
-import Navbar from "./Navbar";
+import Navbar1 from "./Navbar1";
 import Footer from "./Footer";
 
 const Layout = ({ children }) => {
@@ -11,7 +11,7 @@ const Layout = ({ children }) => {
         <title>Cup and Nuzzle Store</title>
       </Head>
       <header>
-        <Navbar />
+        <Navbar1 />
       </header>
       <main className="main-contanier">{children}</main>
       <footer>

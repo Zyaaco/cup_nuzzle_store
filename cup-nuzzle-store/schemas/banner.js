@@ -10,6 +10,21 @@ export default {
       validation: (email) => email.email().warning('Please enter a valid email'),
     },
     {
+      name: 'phone',
+      title: 'Phone',
+      type: 'string',
+    },
+    {
+      name: 'address',
+      title: 'Address',
+      type: 'string',
+    },
+    {
+      name: 'contactText',
+      title: 'Contact Text',
+      type: 'string',
+    },
+    {
       name: 'image',
       title: 'Image',
       type: 'image',

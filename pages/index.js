@@ -1,12 +1,12 @@
 import React from "react";
 
 import { client } from "../lib/client";
-import { Product, FooterBanner, HeroBanner } from "../components";
+import { Product, FooterBanner, HeroBanner1 } from "../components";
 
 const Home = ({ products, bannerData }) => {
   return (
     <>
-      <HeroBanner heroBanner={bannerData.length && bannerData[0]} />
+      <HeroBanner1 heroBanner={bannerData.length && bannerData[0]} />
 
       <div className="products-heading">
         <h2>Best Selling products</h2>
@@ -14,9 +14,10 @@ const Home = ({ products, bannerData }) => {
       </div>
 
       <div className="products-container">
-        {products?.map((product) => (
-          <Product key={product.id} product={product} />
-        ))}
+        {products?.map(
+          (product, index) =>
+            index >= 5 || <Product key={product.id} product={product} />
+        )}
       </div>
 
       <FooterBanner footerBanner={bannerData && bannerData[0]} />
