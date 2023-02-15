@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { BsFillMapFill } from "react-icons/bs";
 import { BsFillTelephoneFill } from "react-icons/bs";
@@ -6,7 +6,13 @@ import { AiTwotoneMail } from "react-icons/ai";
 
 import { client } from "../lib/client";
 
+import { useForm, SubmitHandler } from "react-hook-form";
+
 const Contact = ({ bannerData }) => {
+  const { register, handleSubmit } = useForm();
+  const onSubmit = (formData) => {
+    window.location.href = `mailto:${bannerData[0].email}?subject=${formData.subject}&body=Hi, my name is ${formData.name}. ${formData.message}`;
+  };
   return (
     <section className="contact">
       <div className="contact-content">
@@ -48,11 +54,12 @@ const Contact = ({ bannerData }) => {
           </div>
         </div>
         <div className="contactForm">
-          <form>
+          <form onSubmit={handleSubmit(onSubmit)}>
             <h2>Send Message</h2>
             <div class="inputBox">
               <span>Full Name</span>
               <input
+                {...register("name")}
                 type="text"
                 name=""
                 required="required"
@@ -60,17 +67,19 @@ const Contact = ({ bannerData }) => {
               />
             </div>
             <div class="inputBox">
-              <span>Email</span>
+              <span>Subject</span>
               <input
-                type="email"
+                {...register("subject")}
+                type="text"
                 name=""
                 required="required"
-                placeholder="(example: name@gmail.com)"
+                placeholder="The subject of the message.."
               />
             </div>
             <div class="inputBox">
-              <span>Type your message...</span>
+              <span>Message</span>
               <textarea
+                {...register("message")}
                 type="text"
                 required="required"
                 placeholder="Type your message..."

@@ -10,6 +10,8 @@ import { client, urlFor } from "../../lib/client";
 import { Product } from "../../components";
 import { useStateContext } from "../../context/StateContext";
 
+let timeout = false;
+
 const ProductDetails = ({ product, products }) => {
   const { image, name, details, price } = product;
   const [index, setIndex] = useState(0);
@@ -65,7 +67,11 @@ const ProductDetails = ({ product, products }) => {
             <button
               type="button"
               className="add-to-cart"
-              onClick={() => onAdd(product, qty)}
+              onClick={() => {
+                onAdd(product, qty, timeout);
+                timeout = true;
+                setTimeout(() => (timeout = false), 3000);
+              }}
             >
               Add to Cart
             </button>

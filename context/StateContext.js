@@ -46,7 +46,11 @@ export const StateContext = ({ children }) => {
     window.localStorage.setItem("price", JSON.stringify(totalPrice));
   }, [cartItems]);
 
-  const onAdd = (product, quantity) => {
+  const onAdd = (product, quantity, timeout) => {
+    if (timeout) {
+      toast.error("Wait before adding...");
+      return;
+    }
     const checkProductInCart = cartItems.find(
       (item) => item._id === product._id
     );

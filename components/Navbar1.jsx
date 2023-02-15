@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { AiOutlineShopping } from "react-icons/ai";
+import { AiOutlineShopping, AiOutlineMenu } from "react-icons/ai";
 
 import { Cart } from ".";
 import { useStateContext } from "../context/StateContext";
@@ -31,16 +31,6 @@ const Navbar = () => {
           </li>
         </ul>
       </nav>
-
-      <button
-        type="button"
-        className="clear-btn"
-        onClick={() => {
-          setCartItems([]), setTotalPrice(0), setTotalQuantities(0);
-        }}
-      >
-        Clear
-      </button>
       <button
         type="button"
         className="cart-icon"
