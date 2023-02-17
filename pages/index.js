@@ -16,7 +16,7 @@ const Home = ({ products, bannerData }) => {
       <div className="products-container">
         {products?.map(
           (product, index) =>
-            index >= 5 || <Product key={product.id} product={product} />
+            index >= 5 || <Product key={product._id} product={product} />
         )}
       </div>
 
