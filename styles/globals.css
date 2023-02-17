@@ -849,6 +849,7 @@ span.text-red {
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
   background: transparent;
   padding: 28px 10%;
   transition: all 0.5s ease;
