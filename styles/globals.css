@@ -94,15 +94,17 @@ span.text-red {
 }
 .logo {
   font-size: 18px;
+  color: #64aecc;
 }
 .nav-container .cart-icon {
-  font-size: 25px;
+  font-size: 40px;
   color: #d6d5a8;
   cursor: pointer;
   position: relative;
   transition: transform 0.4s ease;
   border: none;
   background-color: transparent;
+  margin-left: auto;
 }
 .cart-icon:hover {
   transform: scale(1.1, 1.1);
@@ -129,12 +131,14 @@ span.text-red {
 }
 .catalog {
   justify-content: left;
+  padding-bottom: 10rem;
 }
 .product-card {
   cursor: pointer;
   transform: scale(1, 1);
   transition: transform 0.5s ease;
   color: #324d67;
+  padding: 1em;
 }
 .product-card:hover {
   transform: scale(1.1, 1.1);
@@ -640,6 +644,22 @@ span.text-red {
   margin-top: 10px;
 }
 
+@media (max-width: 1850px) {
+  .product-card {
+    transform: scale(1 1);
+  }
+  .nav-container .cart-icon {
+    font-size: 30px;
+  }
+  .logo > * {
+    font-size: 1.7rem;
+  }
+  .logo {
+    max-width: 11rem;
+    min-width: 11rem;
+  }
+}
+
 @media screen and (max-width: 800px) {
   .footer-banner-container {
     height: 560px;
@@ -826,23 +846,24 @@ span.text-red {
 
 .nav-container {
   width: 100%;
-  top: 0;
-  right: 0;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   background: transparent;
-  padding: 28px 12%;
+  padding: 28px 10%;
   transition: all 0.5s ease;
 }
 
 .logo {
   display: flex;
   align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 30rem;
 }
 
 .logo > * {
-  font-size: 1.7rem;
+  font-size: 1.9em;
   font-weight: 600;
   margin-right: 3px;
 }
@@ -850,6 +871,7 @@ span.text-red {
 .nav__links {
   display: flex;
   list-style: none;
+  margin-right: auto;
 }
 
 .nav__links li {
@@ -1015,4 +1037,17 @@ span.text-red {
 
 .nothing-to-see {
   height: 20vh;
+}
+.catalog {
+  padding-top: 5rem;
+}
+
+@media (max-width: 550px) {
+  .nav__links li {
+    margin: 0 0.3em;
+  }
+  .catalog-search {
+    padding: 0 30px 0 0;
+    font-size: 1.6em;
+  }
 }

@@ -16,7 +16,7 @@ const Catalog = ({ products }) => {
   }, [input]);
 
   return (
-    <div>
+    <div className="catalog">
       <input
         type="text"
         onInput={(e) => setInput(e.target.value)}

@@ -17,10 +17,6 @@ const Navbar = () => {
 
   return (
     <div className="nav-container">
-      <p className="logo">
-        <Link href="/">Cup & Nuzzle</Link>
-      </p>
-
       <nav>
         <ul className="nav__links">
           <li>
@@ -31,6 +27,9 @@ const Navbar = () => {
           </li>
         </ul>
       </nav>
+      <p className="logo">
+        <Link href="/">Cup & Nuzzle</Link>
+      </p>
       <button
         type="button"
         className="cart-icon"
